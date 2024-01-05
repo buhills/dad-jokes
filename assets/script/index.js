@@ -3,22 +3,22 @@ const jokebtn = document.getElementById('jokebtn')
 
 jokebtn.addEventListener('click', generateJoke)
 generateJoke()
-//Using async/await
+// Using async/await
 async function generateJoke () {
   const config = {
     headers: {
-      'Accept': 'application/json'
+      Accept: 'application/json'
     }
   }
 
   const res = await fetch('https://icanhazdadjoke.com/', config)
-  
+
   const data = await res.json()
-  
+
   jokeEl.innerHTML = data.joke
 }
 
-//Using .then() method
+// Using .then() method
 // function generateJoke () {
 //   const config = {
 //     headers: {
